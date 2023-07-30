@@ -2,8 +2,8 @@
 def yes_no(questions):
     valid = False
     while not valid:
-        response = input("Have you played this game "
-                         "before?").lower()
+        response = input(questions).lower()
+        error = "Please answer yes / no"
 
         if response == "yes" or response == "y":
             response = "yes"
@@ -11,10 +11,11 @@ def yes_no(questions):
 
         elif response == "no" or response == "n":
             response = "no"
+            print("Instructions")
             return response
 
         else:
-            print("Please answer yes / no")
+            print(error)
 
 
 # Main Routine
