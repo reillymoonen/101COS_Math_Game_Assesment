@@ -1,9 +1,8 @@
-# Functions
 def yes_no(questions):
     valid = False
     while not valid:
-        response = input("Have you played this game "
-                         "before?").lower()
+        response = input(questions).lower()
+        error = "Please answer yes / no"
 
         if response == "yes" or response == "y":
             response = "yes"
@@ -11,14 +10,16 @@ def yes_no(questions):
 
         elif response == "no" or response == "n":
             response = "no"
+            print("Instructions")
             return response
 
+
         else:
-            print("Please answer yes / no")
+            print(error)
 
 
 def num_check(question, low, high):
-    error = "Please enter an whole number between 1 and 3\n"
+    error = "Please enter a whole number between 1 and 3\n"
 
     valid = False
     while not valid:
@@ -40,8 +41,7 @@ def num_check(question, low, high):
 # Main Routine
 
 show_instructions = yes_no("Have you played the "
-                           "game before?")
-print("You choose {}".format(show_instructions))
+                           "game before?\n")
 choose_level = num_check("What Level would you like to play"
                          " (1, 2, 3)\n", 0, 3)
 print("You have selected level {}".format(choose_level))
