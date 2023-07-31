@@ -13,7 +13,6 @@ def yes_no(questions):
             print("Instructions")
             return response
 
-
         else:
             print(error)
 
