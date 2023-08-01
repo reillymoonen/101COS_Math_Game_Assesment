@@ -14,6 +14,7 @@ def yes_no(questions):
         elif response == "no" or response == "n":
             response = "no"
             print("Instructions")
+            print()
             return response
 
         else:
@@ -80,6 +81,7 @@ show_instructions = yes_no("Have you played the "
 choose_level = num_check("What Level would you like to play"
                          " (1, 2, 3)\n", 0, 3)
 print("You have selected level {}".format(choose_level))
+print()
 
 if choose_level == 1:
     l1num1, l1num2 = distribute_level(choose_level)
