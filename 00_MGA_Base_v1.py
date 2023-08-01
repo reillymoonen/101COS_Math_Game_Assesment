@@ -1,3 +1,6 @@
+import random
+
+
 def yes_no(questions):
     valid = False
     while not valid:
@@ -37,6 +40,39 @@ def num_check(question, low, high):
             print(error)
 
 
+def level_1_generator():
+    number_a = random.randint(1, 9)
+    number_b = random.randint(1, 9)
+
+    print(f"What is {number_a} + {number_b}?")
+    return number_a, number_b
+
+
+def level_2_generator():
+    number_a = random.randint(1, 99)
+    number_b = random.randint(1, 99)
+
+    print(f"What is {number_a} + {number_b}?")
+    return number_a, number_b
+
+
+def level_3_generator():
+    number_a = random.randint(1, 999)
+    number_b = random.randint(1, 999)
+
+    print(f"What is {number_a} + {number_b}?")
+    return number_a, number_b
+
+
+def distribute_level(level):
+    if level == 1:
+        return level_1_generator()
+    elif level == 2:
+        return level_2_generator()
+    elif level == 3:
+        return level_3_generator()
+
+
 # Main Routine
 
 show_instructions = yes_no("Have you played the "
@@ -44,3 +80,12 @@ show_instructions = yes_no("Have you played the "
 choose_level = num_check("What Level would you like to play"
                          " (1, 2, 3)\n", 0, 3)
 print("You have selected level {}".format(choose_level))
+
+if choose_level == 1:
+    l1num1, l1num2 = distribute_level(choose_level)
+elif choose_level == 2:
+    l2num1, l2num2 = distribute_level(choose_level)
+elif choose_level == 3:
+    l3num1, l3num2 = distribute_level(choose_level)
+else:
+    print("Invalid level chosen.")
