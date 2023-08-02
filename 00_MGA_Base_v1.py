@@ -83,6 +83,7 @@ def question_solver(num1, num2):
     else:
         print(f"Sorry the correct answer is {correct_answer}.")
 
+
 # Main Routine
 
 show_instructions = yes_no("Have you played the "
@@ -93,13 +94,16 @@ print("You have selected level {}".format(choose_level))
 print()
 
 if choose_level == 1:
-    l1num1, l1num2 = distribute_level(choose_level)
-    question_solver(l1num1, l1num2)
+    for _ in range(10):
+        l1num1, l1num2 = distribute_level(choose_level)
+        question_solver(l1num1, l1num2)
 elif choose_level == 2:
-    l2num1, l2num2 = distribute_level(choose_level)
-    question_solver(l2num1, l2num2)
+    for _ in range(10):
+        l2num1, l2num2 = distribute_level(choose_level)
+        question_solver(l2num1, l2num2)
 elif choose_level == 3:
-    l3num1, l3num2 = distribute_level(choose_level)
-    question_solver(l3num1, l3num2)
+    for _ in range(10):
+        l3num1, l3num2 = distribute_level(choose_level)
+        question_solver(l3num1, l3num2)
 else:
     print("Invalid level chosen.")
