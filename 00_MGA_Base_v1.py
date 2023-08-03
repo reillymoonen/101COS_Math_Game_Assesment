@@ -50,16 +50,16 @@ def level_1_generator():
 
 
 def level_2_generator():
-    number_a = random.randint(1, 99)
-    number_b = random.randint(1, 99)
+    number_a = random.randint(10, 99)
+    number_b = random.randint(10, 99)
 
     print(f"What is {number_a} + {number_b}?")
     return number_a, number_b
 
 
 def level_3_generator():
-    number_a = random.randint(1, 999)
-    number_b = random.randint(1, 999)
+    number_a = random.randint(100, 999)
+    number_b = random.randint(100, 999)
 
     print(f"What is {number_a} + {number_b}?")
     return number_a, number_b
