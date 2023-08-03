@@ -78,16 +78,16 @@ def question_solver(num1, num2):
     correct_answer = num1 + num2
 
     while True:
-        user_answer = int(input("Your answer: "))
+        user_answer = input("Your answer: ")
 
         if user_answer.isdigit():
             if int(user_answer) == correct_answer:
                 print("Correct!")
+            else:
+                print(f"Sorry, the correct answer is {correct_answer}.")
+            break
         else:
-            print(f"Sorry the correct answer is {correct_answer}.")
-        break
-    else:
-        print("Please enter a valid numeric answer.")
+            print("Please enter a valid numeric answer.")
 
 
 # Main Routine
