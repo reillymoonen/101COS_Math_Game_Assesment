@@ -76,12 +76,18 @@ def distribute_level(level):
 
 def question_solver(num1, num2):
     correct_answer = num1 + num2
-    user_answer = int(input("Your answer: "))
 
-    if user_answer == correct_answer:
-        print("Correct!")
+    while True:
+        user_answer = int(input("Your answer: "))
+
+        if user_answer.isdigit():
+            if int(user_answer) == correct_answer:
+                print("Correct!")
+        else:
+            print(f"Sorry the correct answer is {correct_answer}.")
+        break
     else:
-        print(f"Sorry the correct answer is {correct_answer}.")
+        print("Please enter a valid numeric answer.")
 
 
 # Main Routine
@@ -97,13 +103,17 @@ if choose_level == 1:
     for _ in range(10):
         l1num1, l1num2 = distribute_level(choose_level)
         question_solver(l1num1, l1num2)
+    else:
+        print("Invalid level chosen.")
 elif choose_level == 2:
     for _ in range(10):
         l2num1, l2num2 = distribute_level(choose_level)
         question_solver(l2num1, l2num2)
+    else:
+        print("Invalid level chosen.")
 elif choose_level == 3:
     for _ in range(10):
         l3num1, l3num2 = distribute_level(choose_level)
         question_solver(l3num1, l3num2)
-else:
-    print("Invalid level chosen.")
+    else:
+        print("Invalid level chosen.")
