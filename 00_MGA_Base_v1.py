@@ -94,7 +94,7 @@ def game_summary(correct_answers, total_questions):
 show_instructions = yes_no("Have you played the "
                            "game before?\n")
 choose_level = num_check("What Level would you like to play"
-                         " (1, 2, 3)\n", 0, 3)
+                         " (1, 2, 3)\n", 1, 3)
 print("You have selected level {}".format(choose_level))
 print()
 
