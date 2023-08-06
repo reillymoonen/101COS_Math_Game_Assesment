@@ -73,6 +73,7 @@ def question_solver(num1, num2):
         if user_answer.isdigit():
             if int(user_answer) == correct_answer:
                 print("Correct!")
+                print()
                 return True
             else:
                 print(f"Sorry, the correct answer is {correct_answer}.")
@@ -100,14 +101,20 @@ print()
 
 correct_answers = 0
 total_questions = 10
+first_question = 1
+current_question = 2
 
 if choose_level == 1:
+    print("Question", format(first_question))
     for _ in range(total_questions):
         l1num1, l1num2 = distribute_level(choose_level)
         if question_solver(l1num1, l1num2):
+            print("Question", format(current_question))
             correct_answers += 1
+            current_question += 1
     else:
         print("Invalid level chosen.")
+
 elif choose_level == 2:
     for _ in range(total_questions):
         l2num1, l2num2 = distribute_level(choose_level)
@@ -115,6 +122,7 @@ elif choose_level == 2:
             correct_answers += 1
     else:
         print("Invalid level chosen.")
+
 elif choose_level == 3:
     for _ in range(total_questions):
         l3num1, l3num2 = distribute_level(choose_level)
