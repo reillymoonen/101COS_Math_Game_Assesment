@@ -89,64 +89,90 @@ def game_summary(correct_answers, total_questions):
     print(f"Correct answers: {correct_answers}")
     accuracy = (correct_answers / total_questions) * 100
     print(f"Accuracy: {accuracy:.0f}%")
+    print()
+
+
+def play_again(question):
+    valid = False
+    while not valid:
+        response = input(question).lower()
+        error = "Please answer yes / no"
+
+        if response == "yes" or response == "y":
+            response = "yes"
+            return response
+
+        elif response == "no" or response == "n":
+            response = "no"
+            return response
+
+        else:
+            print(error)
 
 
 # Main Routine
+
 show_instructions = yes_no("Have you played the "
                            "game before?\n")
-choose_level = num_check("What Level would you like to play"
-                         " (1, 2, 3)\n", 1, 3)
-print("You have selected level {}".format(choose_level))
-print()
+while True:
+    print()
+    choose_level = num_check("What Level would you like to play"
+                             " (1, 2, 3)\n", 1, 3)
+    print("You have selected level {}".format(choose_level))
+    print()
 
-correct_answers = 0
-total_questions = 10
-first_question = 1
-current_question = 2
+    correct_answers = 0
+    total_questions = 10
+    first_question = 1
+    current_question = 2
 
-if choose_level == 1:
-    print("Question", format(first_question))
-    for _ in range(total_questions):
-        l1num1, l1num2 = distribute_level(choose_level)
-        if question_solver(l1num1, l1num2):
-            print("Question", format(current_question))
-            correct_answers += 1
-            current_question += 1 
+    if choose_level == 1:
+        print("Question", format(first_question))
+        for _ in range(total_questions):
+            l1num1, l1num2 = distribute_level(choose_level)
+            if question_solver(l1num1, l1num2):
+                print("Question", format(current_question))
+                correct_answers += 1
+                current_question += 1
+            else:
+                print()
+                print("Question", format(current_question))
+                current_question += 1
         else:
-            print()
-            print("Question", format(current_question))
-            current_question += 1
-    else:
-        print("Invalid level chosen.")
+            print("Invalid level chosen.")
 
-elif choose_level == 2:
-    print("Question", format(first_question))
-    for _ in range(total_questions):
-        l1num1, l1num2 = distribute_level(choose_level)
-        if question_solver(l1num1, l1num2):
-            print("Question", format(current_question))
-            correct_answers += 1
-            current_question += 1
+    elif choose_level == 2:
+        print("Question", format(first_question))
+        for _ in range(total_questions):
+            l1num1, l1num2 = distribute_level(choose_level)
+            if question_solver(l1num1, l1num2):
+                print("Question", format(current_question))
+                correct_answers += 1
+                current_question += 1
+            else:
+                print()
+                print("Question", format(current_question))
+                current_question += 1
         else:
-            print()
-            print("Question", format(current_question))
-            current_question += 1
-    else:
-        print("Invalid level chosen.")
+            print("Invalid level chosen.")
 
-elif choose_level == 3:
-    print("Question", format(first_question))
-    for _ in range(total_questions):
-        l1num1, l1num2 = distribute_level(choose_level)
-        if question_solver(l1num1, l1num2):
-            print("Question", format(current_question))
-            correct_answers += 1
-            current_question += 1
+    elif choose_level == 3:
+        print("Question", format(first_question))
+        for _ in range(total_questions):
+            l1num1, l1num2 = distribute_level(choose_level)
+            if question_solver(l1num1, l1num2):
+                print("Question", format(current_question))
+                correct_answers += 1
+                current_question += 1
+            else:
+                print()
+                print("Question", format(current_question))
+                current_question += 1
         else:
-            print()
-            print("Question", format(current_question))
-            current_question += 1
-    else:
-        print("Invalid level chosen.")
+            print("Invalid level chosen.")
 
-game_summary(correct_answers, total_questions)
+    game_summary(correct_answers, total_questions)
+
+    replay = play_again("Would you like to play again? (yes/no)\n")
+    if replay != "yes":
+        break
