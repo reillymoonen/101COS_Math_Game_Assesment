@@ -111,23 +111,41 @@ if choose_level == 1:
         if question_solver(l1num1, l1num2):
             print("Question", format(current_question))
             correct_answers += 1
+            current_question += 1 
+        else:
+            print()
+            print("Question", format(current_question))
             current_question += 1
     else:
         print("Invalid level chosen.")
 
 elif choose_level == 2:
+    print("Question", format(first_question))
     for _ in range(total_questions):
-        l2num1, l2num2 = distribute_level(choose_level)
-        if question_solver(l2num1, l2num2):
+        l1num1, l1num2 = distribute_level(choose_level)
+        if question_solver(l1num1, l1num2):
+            print("Question", format(current_question))
             correct_answers += 1
+            current_question += 1
+        else:
+            print()
+            print("Question", format(current_question))
+            current_question += 1
     else:
         print("Invalid level chosen.")
 
 elif choose_level == 3:
+    print("Question", format(first_question))
     for _ in range(total_questions):
-        l3num1, l3num2 = distribute_level(choose_level)
-        if question_solver(l3num1, l3num2):
+        l1num1, l1num2 = distribute_level(choose_level)
+        if question_solver(l1num1, l1num2):
+            print("Question", format(current_question))
             correct_answers += 1
+            current_question += 1
+        else:
+            print()
+            print("Question", format(current_question))
+            current_question += 1
     else:
         print("Invalid level chosen.")
 
