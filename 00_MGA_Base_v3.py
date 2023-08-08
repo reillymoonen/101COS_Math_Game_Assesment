@@ -28,7 +28,6 @@ def yes_no(question):
 
 def num_check(question, low, high):
     error = f"Please enter a whole number between {low} and {high}\n"
-
     valid = False
     while not valid:
         try:
@@ -129,7 +128,7 @@ while True:
     print()
 
     correct_answers = 0
-    total_questions = 10
+    total_questions = 15
     first_question = 1
     current_question = 2
 
