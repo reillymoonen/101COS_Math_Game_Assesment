@@ -13,10 +13,15 @@ def yes_no(question):
 
         elif response == "no" or response == "n":
             response = "no"
-            print("Instructions")
-            print()
+            print("1. Choose Your Level: You will be prompted to select a difficulty level (1, 2, or 3) at the "
+                  "beginning of each game.")
+            print("2. Solve the Questions: You will be presented with a series of addition questions based on your "
+                  "chosen level. Input your answer and press Enter.")
+            print("3. Check Your Answer: The game will let you know if your answer is correct or not.")
+            print("4. Game Summary: After completing the questions, a game summary will show your total questions, "
+                  "correct answers, and accuracy percentage.")
+            print("5. Play Again: You have the option to play again or exit the game.")
             return response
-
         else:
             print(error)
 
@@ -111,7 +116,9 @@ def play_again(question):
 
 
 # Main Routine
-
+print("Welcome to the Math Challenge Game! In this game, you will be presented with addition questions of increasing ")
+print("difficulty levels. Your task is to solve these questions as accurately as possible.")
+print()
 show_instructions = yes_no("Have you played the "
                            "game before?\n")
 while True:
