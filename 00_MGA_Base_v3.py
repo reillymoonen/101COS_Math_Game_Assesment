@@ -115,7 +115,7 @@ def play_again(question):
 
 
 # Main Routine
-print("Welcome to the Math Challenge Game! In this game, you will be presented with addition questions of increasing ")
+print("Welcome to the Math Challenge Game! In this game, you will be presented with addition questions of different ")
 print("difficulty levels. Your task is to solve these questions as accurately as possible.")
 print()
 show_instructions = yes_no("Have you played the "
@@ -128,7 +128,7 @@ while True:
     print()
 
     correct_answers = 0
-    total_questions = 15
+    total_questions = 10
     first_question = 1
     current_question = 2
 
