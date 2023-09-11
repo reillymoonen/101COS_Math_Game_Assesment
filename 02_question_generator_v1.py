@@ -34,6 +34,7 @@ def distribute_level(level):
         return level_3_generator()
 
 
+choose_level = int(input("which level do you want from 1 to 3"))
 if choose_level == 1:
     l1num1, l1num2 = distribute_level(choose_level)
 elif choose_level == 2:
