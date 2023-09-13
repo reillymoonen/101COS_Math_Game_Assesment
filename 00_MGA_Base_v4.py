@@ -120,7 +120,7 @@ def play_again(question):
 
 
 # Main Routine
-print("\033[1;39m Welcome to the Math Challenge Game! In this game, you will be presented with addition questions of "
+print("\033[1;39mWelcome to the Math Challenge Game! In this game, you will be presented with addition questions of "
       "different ")
 print("difficulty levels. Your task is to solve these questions as accurately as possible.")
 print()
