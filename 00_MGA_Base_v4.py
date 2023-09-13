@@ -76,13 +76,16 @@ def question_solver(num1, num2):
         user_answer = input("Your answer: ")
         if user_answer.isdigit():
             if int(user_answer) == correct_answer:
-                print("\033[1;32m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
-                print("║║ 😃 Correct 😃 ║║")
-                print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ \033[1;39m")
+                print("\033[1;32m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
+                print("║║ ! Correct ! ║║")
+                print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ \033[1;39m")
                 print()
                 return True
             else:
-                print(f"Sorry, the correct answer is {correct_answer}.")
+                print("\033[1;31m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
+                print("║║ ! Wrong ! ║║")
+                print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╝")
+                print(f"The correct answer is {correct_answer}. \033[1;39m")
                 return False
         else:
             print("Please enter a valid numeric answer.")
@@ -184,4 +187,9 @@ while True:
 
     replay = play_again("Would you like to play again? (yes/no)\n")
     if replay != "yes":
+        print()
+        print("\033[1;34m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
+        print("║║ X Game Closed X ║║")
+        print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝\033[1;39m")
+
         break
