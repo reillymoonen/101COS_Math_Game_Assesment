@@ -3,12 +3,17 @@ import random
 
 def question_solver(num1, num2):
     correct_answer = num1 + num2
-    user_answer = int(input("Your answer: "))
 
-    if user_answer == correct_answer:
-        print("Correct!")
-    else:
-        print(f"Sorry the correct answer is {correct_answer}.")
+    while True:
+        try:
+            user_answer = int(input("Your answer: "))
+            if user_answer == correct_answer:
+                print("Correct!")
+                break
+            else:
+                print(f"Sorry, incorrect answer. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
 
 
 def level_1_generator():
@@ -44,7 +49,20 @@ def distribute_level(level):
         return level_3_generator()
 
 
-choose_level = int(input("which level do you want from 1 to 3"))
+def get_level_choice():
+    while True:
+        try:
+            choose_level = int(input("Which level do you want from 1 to 3: "))
+            if choose_level in [1, 2, 3]:
+                return choose_level
+            else:
+                print("Please enter a valid level (1, 2, or 3).")
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 3.")
+
+
+choose_level = get_level_choice()
+
 if choose_level == 1:
     l1num1, l1num2 = distribute_level(choose_level)
     question_solver(l1num1, l1num2)
