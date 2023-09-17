@@ -13,14 +13,14 @@ def yes_no(question):
 
         elif response == "no" or response == "n":
             response = "no"
-            print("1. Choose Your Level: You will be prompted to select a difficulty level (1, 2, or 3) at the "
-                  "beginning of each game.")
+            print("\033[1;33m1. Choose Your Level: You will be prompted to select a difficulty level (1, 2, "
+                  "or 3) at the beginning of each game.")
             print("2. Solve the Questions: You will be presented with a series of addition questions based on your "
                   "chosen level. Input your answer and press Enter.")
             print("3. Check Your Answer: The game will let you know if your answer is correct or not.")
             print("4. Game Summary: After completing the questions, a game summary will show your total questions, "
                   "correct answers, and accuracy percentage.")
-            print("5. Play Again: You have the option to play again or exit the game.")
+            print("5. Play Again: You have the option to play again or exit the game.\033[1;36m")
             return response
         else:
             print(error)
@@ -78,14 +78,14 @@ def question_solver(num1, num2):
             if int(user_answer) == correct_answer:
                 print("\033[1;32m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
                 print("║║ ! Correct ! ║║")
-                print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ \033[1;39m")
+                print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝ \033[1;36m")
                 print()
                 return True
             else:
                 print("\033[1;31m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
                 print("║║ ! Wrong ! ║║")
                 print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╝")
-                print(f"The correct answer is {correct_answer}. \033[1;39m")
+                print(f"The correct answer is {correct_answer}. \033[1;36m")
                 return False
         else:
             print("Please enter a valid numeric answer.")
@@ -120,7 +120,7 @@ def play_again(question):
 
 
 # Main Routine
-print("\033[1;39mWelcome to the Math Challenge Game! In this game, you will be presented with addition questions of "
+print("\033[1;36mWelcome to the Math Challenge Game! In this game, you will be presented with addition questions of "
       "different ")
 print("difficulty levels. Your task is to solve these questions as accurately as possible.")
 print()
@@ -190,6 +190,6 @@ while True:
         print()
         print("\033[1;34m╔╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╦╗")
         print("║║ X Game Closed X ║║")
-        print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝\033[1;39m")
+        print("╚╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╩╝\033[1;36m")
 
         break
