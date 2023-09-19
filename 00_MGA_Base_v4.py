@@ -88,7 +88,7 @@ def question_solver(num1, num2):
                 print(f"The correct answer is {correct_answer}. \033[1;36m")
                 return False
         else:
-            print("Please enter a valid numeric answer.")
+            print("Please enter a valid whole number.")
 
 
 def game_summary(correct_answers, total_questions):
