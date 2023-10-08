@@ -52,7 +52,7 @@ def distribute_level(level):
 def get_level_choice():
     while True:
         try:
-            choose_level = int(input("Which level do you want from 1 to 3: "))
+            choose_level = int(input("Which level do you want to play, from 1 to 3: "))
             if choose_level in [1, 2, 3]:
                 return choose_level
             else:
